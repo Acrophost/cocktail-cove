@@ -1,48 +1,33 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Cocktail Cove - WIP!
 
-## 🚀 Quick start
+## Table of contents
 
-1.  **Create a Gatsby site.**
+-   [General info](#general-info)
+-   [Technologies](#technologies)
+-   [Setup](#setup)
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## General info
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+Website containing various cocktail and other beverages. Made with use of [TheCocktailDB REST API](https://www.thecocktaildb.com/api.php). The purpose of this project was to practice use of Redux and REST API.
+Live version: -coming soon!-
 
-2.  **Start developing.**
+## Technologies
 
-    Navigate into your new site’s directory and start it up.
+Project is created with:
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+-   Gatsby version: 3.0.1
+-   ReactJS version: 17.0.1
+-   Styled Components version: 5.2.1
+-   Prettier version: 2.2.1
+-   Redux version: 4.0.5
+-   Lodash version: 4.17.21
+-   Axios version: 0.21.1
 
-3.  **Open the code and start customizing!**
+## Setup
 
-    Your site is now running at http://localhost:8000!
+To run this project, install it locally using npm:
 
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```
+npm install
+npm run develop
+```
