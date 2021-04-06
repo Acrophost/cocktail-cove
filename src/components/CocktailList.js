@@ -21,7 +21,7 @@ const CocktailList = () => {
         if (!_.isEmpty(cocktailList.data)) {
             return cocktailList.data.drinks.map((el) => {
                 return (
-                    <section>
+                    <section key={el.idDrink}>
                         <Link to={`/cocktail/`} state={{ id: el.idDrink }}>
                             <img
                                 src={el.strDrinkThumb}

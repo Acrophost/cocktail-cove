@@ -15,28 +15,21 @@ const Cocktail = ({ cocktailId }) => {
 
     const ShowData = () => {
         if (!_.isEmpty(cocktailState.data[cocktailId])) {
-            let measures = [];
-            let ingredients = [];
-
-            for (let i = 1; i <= 15; i++) {
-                if (
-                    !_.isEmpty(
-                        cocktailState.data[cocktailId][`strIngredient${i}`]
-                    )
+            const measures = _.compact(
+                _.values(
+                    _.pickBy(cocktailState.data[cocktailId], (val, key) => {
+                        return _.startsWith(key, "strMeasure");
+                    })
                 )
-                    ingredients.push(
-                        cocktailState.data[cocktailId][`strIngredient${i}`]
-                    );
-                if (
-                    !_.isEmpty(cocktailState.data[cocktailId][`strMeasure${i}`])
-                )
-                    measures.push(
-                        cocktailState.data[cocktailId][`strMeasure${i}`]
-                    );
-            }
+            );
 
-            measures.reverse();
-            ingredients.reverse();
+            const ingredients = _.compact(
+                _.values(
+                    _.pickBy(cocktailState.data[cocktailId], (val, key) => {
+                        return _.startsWith(key, "strIngredient");
+                    })
+                )
+            );
 
             return (
                 <>
@@ -47,10 +40,10 @@ const Cocktail = ({ cocktailId }) => {
                     <h2>{cocktailState.data[cocktailId].strDrink}</h2>
                     <section>
                         <h3>
-                            Glass -{" "}
-                            <span>
-                                {cocktailState.data[cocktailId].strGlass}
-                            </span>
+                            Prepare in{" "}
+                            {cocktailState.data[
+                                cocktailId
+                            ].strGlass.toLowerCase()}
                         </h3>
                     </section>
                     <section>
@@ -59,7 +52,9 @@ const Cocktail = ({ cocktailId }) => {
                             {ingredients.map((el, key) => {
                                 return (
                                     <li key={key}>
-                                        {el} - {measures[key]}
+                                        {el}{" "}
+                                        {!_.isEmpty(measures[key]) &&
+                                            `- ${measures[key].toLowerCase()}`}
                                     </li>
                                 );
                             })}
