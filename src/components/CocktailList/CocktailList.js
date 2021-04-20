@@ -1,9 +1,12 @@
 import _ from "lodash";
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "gatsby";
 
-import { GetCocktailList } from "../actions/cocktailActions";
+import { GetCocktailList } from "../../actions/cocktailActions";
+
+import CocktailItem from "./CocktailItem";
+
+import { ItemList } from "./CocktailList_Wrapper";
 
 const CocktailList = () => {
     const dispatch = useDispatch();
@@ -19,17 +22,14 @@ const CocktailList = () => {
 
     const ShowData = () => {
         if (!_.isEmpty(cocktailList.data)) {
-            return cocktailList.data.drinks.map((el) => {
+            return cocktailList.data.drinks.map((el, k) => {
                 return (
-                    <section key={el.idDrink}>
-                        <Link to={`/cocktail/`} state={{ id: el.idDrink }}>
-                            <img
-                                src={el.strDrinkThumb}
-                                alt={`${el.strDrink} drink`}
-                            />
-                            <p>{el.strDrink}</p>
-                        </Link>
-                    </section>
+                    <CocktailItem
+                        key={k}
+                        idDrink={el.idDrink}
+                        strDrinkThumb={el.strDrinkThumb}
+                        strDrink={el.strDrink}
+                    />
                 );
             });
         }
@@ -45,12 +45,7 @@ const CocktailList = () => {
         return <section>Unable to get data :(</section>;
     };
 
-    return (
-        <article>
-            <h1>Cocktail List</h1>
-            {ShowData()}
-        </article>
-    );
+    return <ItemList>{ShowData()}</ItemList>;
 };
 
 export default CocktailList;

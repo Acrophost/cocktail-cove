@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 
-import CocktailList from "../components/CocktailList";
+import CocktailList from "../components/CocktailList/CocktailList";
 import Layout from "./../components/Layout";
 
 const IndexPage = () => {
