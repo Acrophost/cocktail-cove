@@ -19,7 +19,7 @@ const CocktailItem = (props) => {
                 />
                 <TileLabel>
                     <TileTitle>{props.strDrink}</TileTitle>
-                    <TileButton>See Recipe</TileButton>
+                    <TileButton variant="outlined">See Recipe</TileButton>
                 </TileLabel>
             </TileLink>
         </CocktailTile>

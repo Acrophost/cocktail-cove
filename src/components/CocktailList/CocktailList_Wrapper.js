@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { Button } from "@material-ui/core";
 
 import { theme1 } from "./../../styles/GlobalStyle";
 
@@ -69,25 +70,28 @@ export const TileTitle = styled.h3`
     }
 `;
 
-export const TileButton = styled.button`
-    background: none;
-    border: 2px solid ${theme1.dark};
-    color: ${theme1.dark};
-    border-radius: 10px;
-    padding: 5px 25px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    font-family: "Pridi", serif;
-    cursor: pointer;
-    margin-bottom: 1rem;
-    outline: ${theme1.accent2};
+export const TileButton = styled(Button)`
+    && {
+        background: none;
+        border: 2px solid ${theme1.dark};
+        color: ${theme1.dark};
+        border-radius: 10px;
+        padding: 5px 25px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: "Pridi", serif;
+        cursor: pointer;
+        margin-top: -1rem;
+        margin-bottom: 1rem;
+        outline: ${theme1.accent2};
 
-    @media (max-width: 1024px) {
-        font-size: 1rem;
-    }
+        @media (max-width: 1024px) {
+            font-size: 1rem;
+        }
 
-    @media (max-width: 540px) {
-        display: none;
+        @media (max-width: 540px) {
+            display: none;
+        }
     }
 `;
 
