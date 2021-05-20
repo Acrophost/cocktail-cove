@@ -9,16 +9,28 @@ import {
     TileButton,
 } from "./CocktailList_Wrapper";
 
-const CocktailItem = (props) => {
+const CocktailItem = ({
+    idDrink,
+    strDrink,
+    strDrinkThumb,
+    setCocktailId,
+    modalRef,
+}) => {
+    const handleOpenModal = (e) => {
+        e.preventDefault();
+        setCocktailId(idDrink);
+        modalRef.current.openModal();
+    };
+
     return (
         <CocktailTile>
-            <TileLink to={`/cocktail/`} state={{ id: props.idDrink }}>
-                <TileImage
-                    src={props.strDrinkThumb}
-                    alt={`${props.strDrink} drink`}
-                />
+            <TileLink
+                aria-label="See cocktail details"
+                onClick={handleOpenModal}
+            >
+                <TileImage src={strDrinkThumb} alt={`${strDrink} drink`} />
                 <TileLabel>
-                    <TileTitle>{props.strDrink}</TileTitle>
+                    <TileTitle>{strDrink}</TileTitle>
                     <TileButton variant="outlined">See Recipe</TileButton>
                 </TileLabel>
             </TileLink>

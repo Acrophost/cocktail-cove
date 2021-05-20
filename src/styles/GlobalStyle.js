@@ -10,8 +10,6 @@ export const theme1 = {
 };
 
 const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Pridi&display=swap');
-
     *,
     *:before,
     *:after {

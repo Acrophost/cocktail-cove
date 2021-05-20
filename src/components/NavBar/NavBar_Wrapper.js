@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Select } from "@material-ui/core";
 
 export const NavContainer = styled.nav`
-    position: fixed;
+    position: absolute;
     z-index: 100;
     width: 100vw;
     display: flex;

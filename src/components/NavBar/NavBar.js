@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import { MenuItem, FormControl, InputLabel } from "@material-ui/core";
 
 import { NavContainer, StyledLogo, StyledSelect } from "./NavBar_Wrapper";
@@ -11,12 +10,10 @@ const NavBar = () => {
 
     return (
         <NavContainer>
-            <Link to="/">
-                <StyledLogo
-                    src={Logo}
-                    alt="Cocktail Cove text written with marker"
-                />
-            </Link>
+            <StyledLogo
+                src={Logo}
+                alt="Cocktail Cove text written with marker"
+            />
             <FormControl>
                 <InputLabel id="lang-select-label">Language</InputLabel>
                 <StyledSelect

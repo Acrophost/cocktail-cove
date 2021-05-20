@@ -8,17 +8,20 @@ import CocktailItem from "./CocktailItem";
 
 import { ItemList } from "./CocktailList_Wrapper";
 
-const CocktailList = () => {
+const CocktailList = ({ modalRef, setCocktailId }) => {
     const dispatch = useDispatch();
     const cocktailList = useSelector((state) => state.CocktailList);
 
-    const FetchData = (category = "Cocktail") => {
-        dispatch(GetCocktailList(category));
-    };
+    const FetchData = React.useCallback(
+        (category = "Cocktail") => {
+            dispatch(GetCocktailList(category));
+        },
+        [dispatch]
+    );
 
     React.useEffect(() => {
         FetchData("Cocktail");
-    }, []);
+    }, [FetchData]);
 
     const ShowData = () => {
         if (!_.isEmpty(cocktailList.data)) {
@@ -29,6 +32,8 @@ const CocktailList = () => {
                         idDrink={el.idDrink}
                         strDrinkThumb={el.strDrinkThumb}
                         strDrink={el.strDrink}
+                        setCocktailId={setCocktailId}
+                        modalRef={modalRef}
                     />
                 );
             });

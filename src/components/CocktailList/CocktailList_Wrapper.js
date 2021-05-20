@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "gatsby";
 import { Button } from "@material-ui/core";
 
 import { theme1 } from "./../../styles/GlobalStyle";
@@ -10,6 +9,7 @@ export const CocktailTile = styled.section`
     margin: 1%;
     position: relative;
     display: block;
+    cursor: pointer;
 
     @media (max-width: 1024px) {
         width: 31%;
@@ -24,7 +24,7 @@ export const CocktailTile = styled.section`
     }
 `;
 
-export const TileLink = styled(Link)`
+export const TileLink = styled.button`
     width: 100%;
     height: 100%;
     position: relative;
@@ -32,6 +32,9 @@ export const TileLink = styled(Link)`
     align-items: center;
     justify-content: center;
     cursor: default;
+    border: none;
+    border-radius: 0;
+    background: none;
 `;
 
 export const TileImage = styled.img`

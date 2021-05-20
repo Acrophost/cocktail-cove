@@ -2,5 +2,9 @@ module.exports = {
     siteMetadata: {
         title: "coctail-cove",
     },
-    plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-react-helmet"],
+    plugins: [
+        "gatsby-plugin-styled-components",
+        "gatsby-plugin-react-helmet",
+        "gatsby-plugin-portal",
+    ],
 };

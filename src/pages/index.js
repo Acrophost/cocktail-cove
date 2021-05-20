@@ -1,17 +1,20 @@
 import * as React from "react";
-import { Helmet } from "react-helmet";
 
 import CocktailList from "../components/CocktailList/CocktailList";
 import Layout from "./../components/Layout";
+import Modal from "./../components/Modal/Modal";
+import Cocktail from "./../components/Cocktail/Cocktail";
 
 const IndexPage = () => {
+    const [cocktailId, setCocktailId] = React.useState(0);
+    const modalRef = React.useRef();
+
     return (
         <Layout>
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>Cocktail Cove</title>
-            </Helmet>
-            <CocktailList />
+            <CocktailList modalRef={modalRef} setCocktailId={setCocktailId} />
+            <Modal ref={modalRef}>
+                <Cocktail cocktailId={cocktailId} />
+            </Modal>
         </Layout>
     );
 };
