@@ -1,12 +1,12 @@
 const DefaultState = {
     loading: false,
-    data: [],
+    data: {},
     errorMsg: "",
 };
 
-const CocktailListReducer = (state = DefaultState, action) => {
+const CocktailSelectReducer = (state = DefaultState, action) => {
     switch (action.type) {
-        case "COCKTAIL_LIST_LOADING": {
+        case "COCKTAIL_SELECT_LOADING": {
             return {
                 ...state,
                 loading: true,
@@ -14,26 +14,23 @@ const CocktailListReducer = (state = DefaultState, action) => {
             };
         }
 
-        case "COCKTAIL_LIST_SUCCESS": {
+        case "COCKTAIL_SELECT_SUCCESS": {
             return {
                 ...state,
                 loading: false,
-                data: [
+                data: {
                     ...state.data,
-                    {
-                        type: `${action.crit}=${action.val}`,
-                        values: action.payload,
-                    },
-                ],
+                    [action.criterium]: action.payload,
+                },
                 errorMsg: "",
             };
         }
 
-        case "COCKTAIL_LIST_FAIL": {
+        case "COCKTAIL_SELECT_FAIL": {
             return {
                 ...state,
                 loading: false,
-                errorMsg: "no cocktails :(",
+                errorMsg: "no values :(",
             };
         }
 
@@ -42,4 +39,4 @@ const CocktailListReducer = (state = DefaultState, action) => {
     }
 };
 
-export default CocktailListReducer;
+export default CocktailSelectReducer;

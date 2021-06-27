@@ -1,7 +1,13 @@
 import * as React from "react";
-import { MenuItem, FormControl, InputLabel } from "@material-ui/core";
 
-import { NavContainer, StyledLogo, StyledSelect } from "./NavBar_Wrapper";
+import {
+    NavContainer,
+    NavLogo,
+    NavLanguage,
+    NavLabel,
+    NavForm,
+    NavOption,
+} from "./NavBar_Wrapper";
 
 import Logo from "../../assets/svgs/title1.svg";
 
@@ -10,23 +16,19 @@ const NavBar = () => {
 
     return (
         <NavContainer>
-            <StyledLogo
-                src={Logo}
-                alt="Cocktail Cove text written with marker"
-            />
-            <FormControl>
-                <InputLabel id="lang-select-label">Language</InputLabel>
-                <StyledSelect
-                    labelId="lang-select-label"
+            <NavLogo src={Logo} alt="Cocktail Cove text written with marker" />
+            <NavForm>
+                <NavLabel htmlFor="lang-select">Language</NavLabel>
+                <NavLanguage
                     id="lang-select"
                     value={language}
                     onChange={setLanguage}
                 >
-                    <MenuItem value="english">English</MenuItem>
-                    <MenuItem value="french">French</MenuItem>
-                    <MenuItem value="german">German</MenuItem>
-                </StyledSelect>
-            </FormControl>
+                    <NavOption value="english">English</NavOption>
+                    <NavOption value="french">French</NavOption>
+                    <NavOption value="german">German</NavOption>
+                </NavLanguage>
+            </NavForm>
         </NavContainer>
     );
 };

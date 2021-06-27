@@ -5,7 +5,6 @@ import Modal from "react-modal";
 import GlobalStyle, { theme1 } from "../styles/GlobalStyle";
 
 import NavBar from "./NavBar/NavBar";
-import Head from "./Head/Head";
 
 Modal.setAppElement(`#___gatsby`);
 
@@ -23,7 +22,6 @@ const Layout = ({ children }) => {
                 />
             </Helmet>
             <NavBar />
-            <Head />
             <main>{children}</main>
         </>
     );

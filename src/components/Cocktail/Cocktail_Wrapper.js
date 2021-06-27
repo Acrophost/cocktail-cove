@@ -46,3 +46,12 @@ export const DetailSubtitle = styled.h3`
 export const DetailSection = styled.section`
     width: 45%;
 `;
+
+export const DetailLoading = styled.section`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+`;

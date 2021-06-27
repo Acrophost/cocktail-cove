@@ -24,7 +24,7 @@ export const CocktailTile = styled.section`
     }
 `;
 
-export const TileLink = styled.button`
+export const TileLink = styled.div`
     width: 100%;
     height: 100%;
     position: relative;
@@ -35,6 +35,7 @@ export const TileLink = styled.button`
     border: none;
     border-radius: 0;
     background: none;
+    z-index: 55;
 `;
 
 export const TileImage = styled.img`
@@ -104,8 +105,17 @@ export const ItemList = styled.article`
     justify-content: center;
     flex-flow: row wrap;
     padding: 1rem 1rem 3rem 4.5rem;
+    min-height: 50vh;
+
+    @media (max-width: 645px) {
+        margin-top: 120px;
+    }
 
     @media (max-width: 540px) {
         padding: 2rem;
     }
+`;
+
+export const ListError = styled.div`
+    color: ${theme1.accent};
 `;
