@@ -1,4 +1,5 @@
 import axios from "axios";
+import _ from "lodash";
 
 export const GetSearch = (val, crit) => (dispatch) => {
     dispatch({ type: "CHANGE_INFO", criteria: crit, value: val });
@@ -73,7 +74,22 @@ export const GetCocktailList = (value, criteria) => async (dispatch) => {
                 break;
         }
 
-        const res = await axios.get(URL);
+        let res;
+
+        const fetchData = (address) => axios.get(address);
+        if (criteria === "Random") {
+            const randoms = _.fill(Array(+value), URL).map(fetchData);
+            res = await Promise.all(randoms).then((data) => data);
+            res = res.reduce((a, b) => {
+                console.log(a);
+                a.data.drinks.push(b.data.drinks[0]);
+                return a;
+            });
+        } else {
+            res = await axios.get(URL);
+        }
+
+        console.log(res);
 
         dispatch({
             type: "COCKTAIL_LIST_SUCCESS",

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Button } from "@material-ui/core";
 
 import { theme1 } from "./../../styles/GlobalStyle";
 
@@ -74,7 +73,7 @@ export const TileTitle = styled.h3`
     }
 `;
 
-export const TileButton = styled(Button)`
+export const TileButton = styled.input`
     && {
         background: none;
         border: 2px solid ${theme1.dark};

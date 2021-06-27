@@ -31,7 +31,7 @@ const CocktailItem = ({
                 <TileImage src={strDrinkThumb} alt={`${strDrink} drink`} />
                 <TileLabel>
                     <TileTitle>{strDrink}</TileTitle>
-                    <TileButton variant="outlined">See Recipe</TileButton>
+                    <TileButton type="button" value="See Recipe" />
                 </TileLabel>
             </TileLink>
         </CocktailTile>
